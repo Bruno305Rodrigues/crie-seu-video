@@ -28,7 +28,7 @@ const App: React.FC = () => {
     }
 
     try {
-      const response = await fetch('/create-video', {
+      const response = await fetch('/api/create-video', {
         method: 'POST',
         body: formData,
       });
