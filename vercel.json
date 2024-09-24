@@ -1,0 +1,25 @@
+{
+  "builds": [
+    {
+      "src": "gerador/client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    },
+    {
+      "src": "gerador/server/package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/gerador/server/src/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/gerador/client/$1"
+    }
+  ]
+}
