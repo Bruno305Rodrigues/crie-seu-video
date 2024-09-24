@@ -1,1 +1,11 @@
-node_modules
+# Ignore node_modules para client e server
+/gerador/server/node_modules
+/gerador/client/node_modules
+
+# Ignore diretórios de build ou dist se houver
+/gerador/server/build
+/gerador/client/build
+
+# Ignore arquivos específicos de ambiente
+.env
+.DS_Store
