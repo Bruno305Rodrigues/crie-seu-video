@@ -8,14 +8,14 @@
       }
     },
     {
-      "src": "gerador/server/package.json",
+      "src": "gerador/server/api/*.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/gerador/server/src/$1"
+      "dest": "/gerador/server/api/$1"
     },
     {
       "src": "/(.*)",

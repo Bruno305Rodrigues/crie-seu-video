@@ -1,14 +1,20 @@
 {
   "compilerOptions": {
-    "target": "ESNext",                           // Versão do JavaScript que será gerada
-    "module": "CommonJS",                         // Módulo para Node.js
-    "outDir": "./dist",                           // Diretório de saída para os arquivos compilados
-    "rootDir": "./src",                           // Diretório raiz dos arquivos de origem
-    "strict": true,                               // Habilita todas as verificações de tipo
-    "esModuleInterop": true,                      // Habilita a interoperabilidade entre módulos ES e CommonJS
-    "skipLibCheck": true,                         // Ignora a verificação de tipo em arquivos de definição de tipo
-    "forceConsistentCasingInFileNames": true     // Garante que o sistema de arquivos seja sensível a maiúsculas e minúsculas
+    "target": "ES2020", // Escolha do ES2020 para compatibilidade com features modernas
+    "module": "commonjs", // Express usa o sistema de módulos CommonJS
+    "outDir": "./dist", // Saída dos arquivos compilados na pasta dist
+    "strict": true, // Habilita checagens mais rigorosas do TypeScript
+    "esModuleInterop": true, // Para facilitar o uso de imports no estilo ES6
+    "skipLibCheck": true, // Ignora verificação de tipos de bibliotecas
+    "forceConsistentCasingInFileNames": true, // Garante consistência de nomes de arquivos
+    "moduleResolution": "node", // Resolve módulos como no Node.js
+    "allowSyntheticDefaultImports": true // Para importar pacotes que não possuem exports padrão corretamente
   },
-  "include": ["src/**/*.ts"],                     // Incluir arquivos TypeScript do diretório src
-  "exclude": ["node_modules", "dist"]            // Excluir diretório node_modules e dist
+  "include": [
+    "api/**/*.ts" // Inclui todos os arquivos TypeScript dentro da pasta api
+  ],
+  "exclude": [
+    "node_modules", // Exclui a pasta node_modules
+    "dist" // Exclui a pasta dist para evitar conflitos
+  ]
 }
